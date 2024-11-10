@@ -41,6 +41,33 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 	return (*this);
 }
 
+// Move constructor
+ClapTrap::ClapTrap(ClapTrap&& other) noexcept : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
+{
+	std::cout << "Move constructor called\n";
+	other._attackDamage = 0;
+	other._hitPoints = 0;
+	other._energyPoints = 0;
+}
+
+// Move assignment constructor
+ClapTrap& ClapTrap::operator=(ClapTrap&& other) noexcept
+{
+	std::cout << "Move assignment operator called\n";
+	if (this == &other)
+		return (*this);
+	_attackDamage = other._attackDamage;
+	_name = other._name;
+	_hitPoints = other._hitPoints;
+	_energyPoints = other._energyPoints;
+
+	other._attackDamage = 0;
+	other._hitPoints = 0;
+	other._energyPoints = 0;
+
+	return (*this);
+}
+
 // ACTIONS (ATTACK, DAMAGE, REPAIR)
 void	ClapTrap::attack(const std::string& target)
 {
@@ -48,7 +75,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << "Sorry, not enough energy or hit points to attack..." << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << " causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << this->_name << " attacks " << target << " causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints -= 1;
 		std::cout << "New total of energy points for " << this->_name << " is " << this->_energyPoints << std::endl;
 	}

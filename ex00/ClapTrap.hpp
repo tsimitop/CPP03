@@ -1,6 +1,7 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
+# include <utility> // for std::move
 
 class ClapTrap
 {
@@ -14,6 +15,8 @@ public:
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& other);
 	ClapTrap& operator=(const ClapTrap& other);
+	ClapTrap(ClapTrap&& other) noexcept;
+	ClapTrap& operator=(ClapTrap&& other) noexcept;
 	~ClapTrap();
 
 	void	attack(const std::string& target);
