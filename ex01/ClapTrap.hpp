@@ -1,20 +1,23 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
+# include <utility> // for std::move
 
 class ClapTrap
 {
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
 	unsigned int	_attackDamage;
 public:
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& other);
-	~ClapTrap();
+	ClapTrap();										//Default constructor
+	ClapTrap(std::string name);						//Parameterized constructor
+	ClapTrap(const ClapTrap& other);				//Copy constructor
+	ClapTrap& operator=(const ClapTrap& other);		//Copy assignment operator
+	ClapTrap(ClapTrap&& other) noexcept;			//Move constructor
+	ClapTrap& operator=(ClapTrap&& other) noexcept;	//Move assigment operator
+	~ClapTrap();									//Default Destructor
 
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
