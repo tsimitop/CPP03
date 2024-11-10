@@ -3,31 +3,31 @@
 // Default constructor
 ClapTrap::ClapTrap() : _name("Default ClapTrap"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "ClapTrap: Default constructor called." << std::endl;
 }
 
 // Parameterized constructor
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Parameterized constructor called." << std::endl;
+    std::cout << "ClapTrap: Parameterized constructor called." << std::endl;
 }
 
 // Default destructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called for " << this->_name << "." << std::endl;
+	std::cout << "ClapTrap: Default destructor called for " << this->_name << "." << std::endl;
 }
 
 // Copy constructor
 ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
-    std::cout << "Copy constructor called." << std::endl;
+    std::cout << "ClapTrap: Copy constructor called." << std::endl;
 }
 
 // Copy assignment operator
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "ClapTrap: Copy assignment operator called." << std::endl;
 	if (this == &other)
 		return (*this);
     _name = other._name;
@@ -44,7 +44,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 // Move constructor
 ClapTrap::ClapTrap(ClapTrap&& other) noexcept : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
-	std::cout << "Move constructor called\n";
+	std::cout << "ClapTrap: Move constructor called\n";
 	other._attackDamage = 0;
 	other._hitPoints = 0;
 	other._energyPoints = 0;
@@ -53,7 +53,7 @@ ClapTrap::ClapTrap(ClapTrap&& other) noexcept : _name(other._name), _hitPoints(o
 // Move assignment constructor
 ClapTrap& ClapTrap::operator=(ClapTrap&& other) noexcept
 {
-	std::cout << "Move assignment operator called\n";
+	std::cout << "ClapTrap: Move assignment operator called\n";
 	if (this == &other)
 		return (*this);
 	_attackDamage = other._attackDamage;

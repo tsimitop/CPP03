@@ -1,34 +1,34 @@
 #include "ScavTrap.hpp"
 
 // Default constructor
-ScavTrap::ScavTrap() : ClapTrap("Default ClapTrap"), _hitPoints(100), _energyPoints(50), _attackDamage(20)
+ScavTrap::ScavTrap() : ClapTrap("Default ClapTrap")
 {
-	std::cout << "Default constructor for ScavTrap called\n";
-	// this->_name = "Default ClapTrap";
-	// this->_hitPoints = 100;
-	// this->_energyPoints = 50;
-	// this->_attackDamage = 20;
+	std::cout << "ScavTrap: Default constructor called\n";
+	this->_name = "Default ScavTrap";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 // Parameterized constructor
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _hitPoints(100), _energyPoints(50), _attackDamage(20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Parameterized constructor for ScavTrap called\n";
-	// this->_hitPoints = 100;
-	// this->_energyPoints = 50;
-	// this->_attackDamage = 20;
+	std::cout << "ScavTrap: Parameterized constructor called\n";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 // Copy constructor
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-	std::cout << "Copy constructor for ScavTrap called\n";
+	std::cout << "ScavTrap: Copy constructor called\n";
 }
 
 // Copy assignment operator
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	std::cout << "Copy assignment operator for ScavTrap called\n";
+	std::cout << "ScavTrap: Copy assignment operator called\n";
 	if (this == &other)
 		return (*this);
 	ClapTrap::operator=(other);
@@ -38,7 +38,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 // Move constructor
 ScavTrap::ScavTrap(ScavTrap&& other) noexcept : ClapTrap(std::move(other))
 {
-	std::cout << "Move constructor for ScavTrap called\n";
+	std::cout << "ScavTrap: Move constructor called\n";
 	this->_name = std::move(other._name);
 	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
@@ -53,7 +53,7 @@ ScavTrap::ScavTrap(ScavTrap&& other) noexcept : ClapTrap(std::move(other))
 // Move assignment operator
 ScavTrap& ScavTrap::operator=(ScavTrap&& other) noexcept
 {
-	std::cout << "Move assignment operator for ScavTrap called\n";
+	std::cout << "ScavTrap: Move assignment operator called\n";
 	if (this == &other)
 		return (*this);
 	ClapTrap::operator=(std::move(other));
@@ -74,7 +74,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap&& other) noexcept
 // Default destructor
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Default destructor for ScavTrap called\n";
+	std::cout << "ScavTrap: Default destructor called for " << this->_name << ".\n";
 }
 
 void	ScavTrap::attack(const std::string& target)
@@ -92,4 +92,13 @@ void	ScavTrap::attack(const std::string& target)
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap: " << this->_name << " in now in Gate Keeper mode.\n";
+}
+
+void	ScavTrap::printStatus()
+{
+	std::cout << "SCAVTRAP STATUS\n";
+	std::cout << "ScavTrap name\t\t" << _name << std::endl;
+	std::cout << "ScavTrap hitpoints\t" << _hitPoints << std::endl;
+	std::cout << "ScavTrap energypoints\t" << _energyPoints << std::endl;
+	std::cout << "ScavTrap attackdamage\t" << _attackDamage << std::endl;
 }

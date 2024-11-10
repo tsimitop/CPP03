@@ -15,7 +15,8 @@ public:
 	~ScavTrap();									//Default destructor
 
 	void	attack(const std::string& target);
-	void guardGate();
+	void	guardGate();
+	void	printStatus();
 };
 
 #endif
