@@ -15,6 +15,7 @@ public:
 	~FragTrap();									//Default destructor
 
 	void	highFivesGuys(void);
+	void	printStatus();
 };
 
 #endif

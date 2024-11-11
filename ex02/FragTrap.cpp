@@ -81,3 +81,12 @@ void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap: High Five! You have managed to run the program and found your way throuh all of these classes!\n";
 }
+
+void	FragTrap::printStatus()
+{
+	std::cout << "FRAGTRAP STATUS\n";
+	std::cout << "FragTrap name\t\t" << _name << std::endl;
+	std::cout << "FragTrap hitpoints\t" << _hitPoints << std::endl;
+	std::cout << "FragTrap energypoints\t" << _energyPoints << std::endl;
+	std::cout << "FragTrap attackdamage\t" << _attackDamage << std::endl;
+}

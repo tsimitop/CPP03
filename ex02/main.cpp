@@ -2,39 +2,30 @@
 
 int	main(void)
 {
-	ScavTrap	scav1("ShifuSkav");
-	ScavTrap	scav2("AtlasSkav");
-	ClapTrap	clap1("ClapptonClap");
+	FragTrap	frag1("FrogFrag");
+	FragTrap	frag2("ToadFrag");
 
 	std::cout << "\033[92m";
-	std::cout << "-----PRESENTING CLAPTRAPPERS!-----\n";
-	std::cout << scav1.getName() << " is scav1" << std::endl;
-	std::cout << scav2.getName() << " is scav2" << std::endl;
-	std::cout << clap1.getName() << " is clap1" << std::endl;
+	std::cout << "-----PRESENTING FRAGTRAPPERS!-----\n";
+	std::cout << frag1.getName() << " is frag1" << std::endl;
+	std::cout << frag2.getName() << " is frag2" << std::endl;
 	std::cout << "\033[34m";
 
-	std::cout << "------SETTING ATTACK DAMAGE!-----\n"; //if ClapTrap
-	clap1.setAttackDamage(7);
-
 	// std::cout << "---------PRINTING STATUS!--------\n"; //if ScavTrap
-	// scav1.printStatus();
-	// scav2.printStatus();
+	// frag1.printStatus();
+	// frag2.printStatus();
 
 	std::cout << "\033[31m";
+	frag1.highFivesGuys();
 	std::cout << "----------FIGHT STARTS!----------\n";
-	scav2.guardGate();
-	scav1.attack(scav2.getName());
-	scav2.takeDamage(scav1.getAttackDamage());
-	clap1.attack(scav2.getName());
-	scav2.takeDamage(clap1.getAttackDamage());
-	scav2.beRepaired(60);
-	scav2.attack(scav1.getName());
-	scav1.takeDamage(scav2.getAttackDamage());
-	scav2.attack(clap1.getName());
-	clap1.takeDamage(scav2.getAttackDamage());
-	clap1.beRepaired(5);
-	scav2.attack(clap1.getName());
-	clap1.takeDamage(scav2.getAttackDamage());
+	frag1.attack(frag2.getName());
+	frag2.takeDamage(frag1.getAttackDamage());
+	frag2.beRepaired(20);
+	frag2.attack(frag1.getName());
+	frag1.takeDamage(frag2.getAttackDamage());
+	frag1.beRepaired(5);
+	frag2.attack(frag1.getName());
+	frag1.takeDamage(frag2.getAttackDamage());
 	std::cout << "-----------FIGHT ENDS!-----------\n";
 	std::cout << "\033[0m";
 	return (0);
