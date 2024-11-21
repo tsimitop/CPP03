@@ -19,7 +19,7 @@ public:
 	ClapTrap& operator=(ClapTrap&& other) noexcept;	//Move assigment operator
 	~ClapTrap();									//Default Destructor
 
-	void	attack(const std::string& target);
+	void	attack(const std::string& target); //virtual
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	void	setHitPoints(unsigned int nbr);
