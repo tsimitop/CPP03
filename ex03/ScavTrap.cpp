@@ -39,15 +39,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 ScavTrap::ScavTrap(ScavTrap&& other) noexcept : ClapTrap(std::move(other))
 {
 	std::cout << "ScavTrap: Move constructor called\n";
-	this->_name = std::move(other._name);
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	other._hitPoints = 0;
-	other._energyPoints = 0;
-	other._attackDamage = 0;
-	other._name = "Moved";
 }
 
 // Move assignment operator
@@ -55,35 +46,24 @@ ScavTrap& ScavTrap::operator=(ScavTrap&& other) noexcept
 {
 	std::cout << "ScavTrap: Move assignment operator called\n";
 	if (this == &other)
-		return (*this);
+		return *this;
 	ClapTrap::operator=(std::move(other));
-
-	this->_name = std::move(other._name);
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	other._hitPoints = 0;
-	other._energyPoints = 0;
-	other._attackDamage = 0;
-	other._name = "Moved";
-
-	return (*this);
+	return *this;
 }
 
-// Default destructor
+// Destructor
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap: Default destructor called for " << this->_name << ".\n";
+	std::cout << "ScavTrap: Destructor called for " << this->_name << ".\n";
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_energyPoints <= 0 || this->_hitPoints <= 0)
-		std::cout << "ScavTrap: Sorry, not enough energy or hit points to attack..." << std::endl;
+		std::cout << "ScavTrap: Sorry, not enough energy or hit points to attack...\n";
 	else
 	{
-		std::cout << "ScavTrap: " << this->_name << " attacks " << target << " causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << "ScavTrap: " << this->_name << " attacks " << target << " causing " << this->_attackDamage << " points of damage!\n";
 		this->_energyPoints -= 1;
 		std::cout << "ScavTrap: New total of energy points for " << this->_name << " is " << this->_energyPoints << std::endl;
 	}

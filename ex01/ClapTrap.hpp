@@ -1,7 +1,6 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
-# include <utility> // for std::move
 
 class ClapTrap
 {
@@ -17,7 +16,7 @@ public:
 	ClapTrap& operator=(const ClapTrap& other);		//Copy assignment operator
 	ClapTrap(ClapTrap&& other) noexcept;			//Move constructor
 	ClapTrap& operator=(ClapTrap&& other) noexcept;	//Move assigment operator
-	~ClapTrap();									//Default Destructor
+	~ClapTrap();									//Destructor
 
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
@@ -27,12 +26,11 @@ public:
 	void	setAttackDamage(unsigned int nbr);
 	void	setName(std::string name);
 
-	int		getHitPoints();
-	int		getEnergyPoints();
-	int		getAttackDamage();
-	std::string	getName();
+	int			getHitPoints() const;
+	int			getEnergyPoints() const;
+	int			getAttackDamage() const;
+	std::string	getName() const;
 
 };
-
 
 #endif

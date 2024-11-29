@@ -15,7 +15,7 @@ public:
 	DiamondTrap& operator=(const DiamondTrap& other);		//Copy assignment operator
 	DiamondTrap(DiamondTrap&& other) noexcept;				//Move constructor
 	DiamondTrap& operator=(DiamondTrap&& other) noexcept;	//Move assignment operator
-	~DiamondTrap();
+	~DiamondTrap();											//Destructor
 
 	void		attack(const std::string& target);
 	void		whoAmI();

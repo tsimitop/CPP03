@@ -12,7 +12,7 @@ public:
 	ScavTrap& operator=(const ScavTrap& other);		//Copy assignment operator
 	ScavTrap(ScavTrap&& other) noexcept;			//Move constructor
 	ScavTrap& operator=(ScavTrap&& other) noexcept;	//Move assignment operator
-	~ScavTrap();									//Default destructor
+	~ScavTrap();									//Destructor
 
 	void	attack(const std::string& target);
 	void	guardGate();

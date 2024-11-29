@@ -73,10 +73,10 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap&& other) noexcept
 	return (*this);
 }
 
-// Default destructor
+// Destructor
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap: Default destructor called for " << getName() << ".\n";
+	std::cout << "DiamondTrap: Destructor called for " << getName() << ".\n";
 }
 
 std::string	DiamondTrap::getDiamondName()
