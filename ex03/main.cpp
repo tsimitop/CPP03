@@ -7,8 +7,8 @@ int	main(void)
 
 	std::cout << "\033[92m";
 	std::cout << "-----PRESENTING DIAMONDTRAPPERS!-----\n";
-	std::cout << diamond1.getDiamondName() << " is diamond1" << std::endl;
-	std::cout << diamond2.getDiamondName() << " is diamond2" << std::endl;
+	std::cout << diamond1.getDiamondName() << " is diamond1\n";
+	std::cout << diamond2.getDiamondName() << " is diamond2\n";
 	std::cout << "\033[34m";
 
 	std::cout << "---------PRINTING STATUS!--------\n"; //if ScavTrap

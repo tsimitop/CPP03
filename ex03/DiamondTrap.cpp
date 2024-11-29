@@ -41,15 +41,6 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 DiamondTrap::DiamondTrap(DiamondTrap&& other) noexcept : ClapTrap(std::move(other))
 {
 	std::cout << "DiamondTrap: Move constructor called\n";
-	this->_name = std::move(other._name);
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	other._hitPoints = 0;
-	other._energyPoints = 0;
-	other._attackDamage = 0;
-	other._name = "Moved";
 }
 
 // Move assignment operator
@@ -59,17 +50,6 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap&& other) noexcept
 	if (this == &other)
 		return (*this);
 	ClapTrap::operator=(std::move(other));
-
-	this->_name = std::move(other._name);
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	other._hitPoints = 0;
-	other._energyPoints = 0;
-	other._attackDamage = 0;
-	other._name = "Moved";
-
 	return (*this);
 }
 
@@ -101,7 +81,7 @@ void	DiamondTrap::attack(const std::string& target)
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "-------------------WHOAMI OUTPUT-----------------\n";
-	std::cout << "|DiamondTrap: _name is\t|" << this->_name << "\t\t|" << std::endl;
-	std::cout << "|ClapTrap::getName() is\t|" << ClapTrap::getName() << "\t|" << std::endl;
+	std::cout << "|DiamondTrap: _name is\t|" << this->_name << "\t\t|\n";
+	std::cout << "|ClapTrap::getName() is\t|" << ClapTrap::getName() << "\t|\n";
 	std::cout << "-------------------------------------------------\n";
 }
