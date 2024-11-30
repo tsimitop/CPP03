@@ -1,7 +1,6 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 # include <iostream>
-# include <utility> // for std::move
 
 class ClapTrap
 {

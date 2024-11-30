@@ -1,13 +1,13 @@
 #include "DiamondTrap.hpp"
 
 // Default constructor
-DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), ScavTrap("Default_clap_name"), FragTrap("Default_clap_name")
+DiamondTrap::DiamondTrap() : ClapTrap("Default DiamondTrap_clap_name"), ScavTrap("Default ScavTrap"), FragTrap("Default FragTrap")//, ClapTrap("Default DiamondTrap_clap_name")
 {
 	std::cout << "DiamondTrap: Default constructor called\n";
 	this->_name = "Default DiamondTrap";
-	this->_hitPoints = ScavTrap::getHitPoints();
-	this->_energyPoints = FragTrap::getEnergyPoints();
-	this->_attackDamage = ScavTrap::getAttackDamage();
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_energyPoints = ScavTrap::getEnergyPoints();
+	this->_attackDamage = FragTrap::getAttackDamage();
 }
 
 // Parameterized constructor
@@ -15,16 +15,16 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 {
 	std::cout << "DiamondTrap: Parameterized constructor called\n";
 	this->_name = name;
-	this->_hitPoints = ScavTrap::getHitPoints();
-	this->_energyPoints = FragTrap::getEnergyPoints();
-	this->_attackDamage = ScavTrap::getAttackDamage();
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_energyPoints = ScavTrap::getEnergyPoints();
+	this->_attackDamage = FragTrap::getAttackDamage();
 }
 
 // Copy constructor
 DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	std::cout << "DiamondTrap: Copy constructor called\n";
-	this->_name = other.getName();
+	this->_name = other._name;
 }
 
 // Copy assignment operator
@@ -38,9 +38,10 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 }
 
 // Move constructor
-DiamondTrap::DiamondTrap(DiamondTrap&& other) noexcept : ClapTrap(std::move(other))
+DiamondTrap::DiamondTrap(DiamondTrap&& other) noexcept : ClapTrap(std::move(other)), _name(std::move(other._name))
 {
 	std::cout << "DiamondTrap: Move constructor called\n";
+	_name = std::move(other._name);
 }
 
 // Move assignment operator
@@ -56,7 +57,7 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap&& other) noexcept
 // Destructor
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap: Destructor called for " << getName() << ".\n";
+	std::cout << "DiamondTrap: Destructor called for " << _name << ".\n";
 }
 
 std::string	DiamondTrap::getDiamondName()
@@ -80,8 +81,12 @@ void	DiamondTrap::attack(const std::string& target)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "-------------------WHOAMI OUTPUT-----------------\n";
-	std::cout << "|DiamondTrap: _name is\t|" << this->_name << "\t\t|\n";
-	std::cout << "|ClapTrap::getName() is\t|" << ClapTrap::getName() << "\t|\n";
-	std::cout << "-------------------------------------------------\n";
+	std::cout << "-----------------------WHOAMI OUTPUT---------------------\n";
+	std::cout << "\n\tDiamondTrap _name is:\t";
+	std::cout << this->_name << std::endl;
+
+	std::cout << "\tClapTrap _name is:\t";
+	std::cout << ClapTrap::getName() << std::endl << std::endl;
+
+	std::cout << "---------------------------------------------------------\n";
 }

@@ -2,7 +2,7 @@ NAME = exec
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra  -std=c++11 -Wshadow #-Wno-shadow
+CFLAGS = -Wall -Werror -Wextra  -std=c++17 -Wshadow #-Wno-shadow
 
 DEBUG = -g
 

@@ -4,11 +4,23 @@ int	main(void)
 {
 	DiamondTrap	diamond1("DiamondSharp");
 	DiamondTrap	diamond2("DiamondFake");
+	DiamondTrap	diamond3("DiamondThree");
+	DiamondTrap copy = diamond1;
+	DiamondTrap copyAssignment;
+	copyAssignment = diamond1;
+	DiamondTrap move = std::move(diamond2);
+	DiamondTrap moveAssignment;
+	moveAssignment = std::move(diamond3);
 
 	std::cout << "\033[92m";
 	std::cout << "-----PRESENTING DIAMONDTRAPPERS!-----\n";
 	std::cout << diamond1.getDiamondName() << " is diamond1\n";
 	std::cout << diamond2.getDiamondName() << " is diamond2\n";
+	std::cout << diamond3.getDiamondName() << " is diamond3\n";
+	std::cout << copy.getDiamondName() << " is copy\n";
+	std::cout << copyAssignment.getDiamondName() << " is copyAssignment\n";
+	std::cout << move.getDiamondName() << " is move\n";
+	std::cout << moveAssignment.getDiamondName() << " is moveAssignment\n";
 	std::cout << "\033[34m";
 
 	std::cout << "---------PRINTING STATUS!--------\n"; //if ScavTrap
