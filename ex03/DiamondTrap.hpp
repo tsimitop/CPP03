@@ -11,7 +11,6 @@ private:
 public:
 	DiamondTrap();											//Default constructor
 	DiamondTrap(std::string name);							//Parameterized constructor
-	// DiamondTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack);//Parameterized constructor FULL
 	DiamondTrap(const DiamondTrap& other);					//Copy consturctor
 	DiamondTrap& operator=(const DiamondTrap& other);		//Copy assignment operator
 	DiamondTrap(DiamondTrap&& other) noexcept;				//Move constructor

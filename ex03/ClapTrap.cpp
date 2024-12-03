@@ -1,18 +1,15 @@
 #include "ClapTrap.hpp"
 
-// ClapTrap::ClapTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack) : _name(name), _hitPoints(hit), _energyPoints(energy), _attackDamage(attack)
-// {
-// 	std::cout << "ClapTrap: Full parameterized constructor called\n";
-// }
-
 // Default constructor
-ClapTrap::ClapTrap() : _name("Default ClapTrap"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap()\
+: _name("Default ClapTrap"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap: Default constructor called.\n";
 }
 
 // Parameterized constructor
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(std::string name)\
+: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap: Parameterized constructor called.\n";
 }
@@ -24,8 +21,8 @@ ClapTrap::~ClapTrap()
 }
 
 // Copy constructor
-ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hitPoints(other._hitPoints),\
-_energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
+ClapTrap::ClapTrap(const ClapTrap& other)\
+: _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
 	std::cout << "ClapTrap: Copy constructor called.\n";
 }
@@ -44,8 +41,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 }
 
 // Move constructor
-ClapTrap::ClapTrap(ClapTrap&& other) noexcept : _name(std::move(other._name)),\
-_hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
+ClapTrap::ClapTrap(ClapTrap&& other) noexcept\
+: _name(std::move(other._name)), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
 	std::cout << "ClapTrap: Move constructor called\n";
 	other._hitPoints = 0;
@@ -160,4 +157,12 @@ int		ClapTrap::getAttackDamage() const
 std::string	ClapTrap::getName() const
 {
 	return (this->_name);
+}
+
+void	ClapTrap::reset()
+{
+	this->_name.clear();
+	this->_hitPoints = 0;
+	this->_energyPoints = 0;
+	this->_attackDamage = 0;
 }

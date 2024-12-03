@@ -8,7 +8,6 @@ class FragTrap : public virtual ClapTrap
 public:
 	FragTrap();										//Default constructor
 	FragTrap(std::string name);						//Parameterized constructor
-	// FragTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack);//Parameterized constructor FULL
 	FragTrap(const FragTrap& other);				//Copy consturctor
 	FragTrap& operator=(const FragTrap& other);		//Copy assignment operator
 	FragTrap(FragTrap&& other) noexcept;			//Move constructor

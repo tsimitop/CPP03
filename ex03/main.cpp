@@ -23,7 +23,7 @@ int	main(void)
 	std::cout << moveAssignment.getDiamondName() << " is moveAssignment\n";
 	std::cout << "\033[34m";
 
-	std::cout << "---------PRINTING STATUS!--------\n"; //if ScavTrap
+	std::cout << "---------PRINTING STATUS!--------\n";
 	diamond1.printStatus();
 	diamond2.printStatus();
 	diamond3.printStatus();
@@ -35,6 +35,13 @@ int	main(void)
 	std::cout << "\033[35m";
 	diamond1.whoAmI();
 	diamond2.whoAmI();
+	diamond3.whoAmI();
+	move.whoAmI();
+	copy.whoAmI();
+	copyAssignment.whoAmI();
+	move.whoAmI();
+	moveAssignment.whoAmI();
+
 
 	std::cout << "\033[31m";
 	std::cout << "----------FIGHT STARTS!----------\n";
@@ -74,7 +81,7 @@ int	main(void)
 // 	std::cout << moveAssignment.getName() << " is moveAssignment\n";
 // 	std::cout << "\033[34m";
 
-// 	std::cout << "---------PRINTING STATUS!--------\n"; //if ScavTrap
+// 	std::cout << "---------PRINTING STATUS!--------\n";
 // 	diamond1.printStatus();
 // 	diamond2.printStatus();
 // 	diamond3.printStatus();

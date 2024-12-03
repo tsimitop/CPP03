@@ -12,7 +12,6 @@ protected:
 public:
 	ClapTrap();										//Default constructor
 	ClapTrap(std::string name);						//Parameterized constructor
-	// ClapTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack);//Parameterized constructor FULL
 	ClapTrap(const ClapTrap& other);				//Copy constructor
 	ClapTrap& operator=(const ClapTrap& other);		//Copy assignment operator
 	ClapTrap(ClapTrap&& other) noexcept;			//Move constructor
@@ -32,6 +31,7 @@ public:
 	int		getAttackDamage() const;
 	std::string	getName() const;
 
+	void	reset();
 };
 
 
