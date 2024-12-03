@@ -1,5 +1,11 @@
 #include "FragTrap.hpp"
 
+// FragTrap::FragTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack)\
+// : ClapTrap(name, hit, energy, attack)
+// {
+// 	std::cout << "FragTrap: Full parameterized constructor called\n";
+// }
+
 // Default constructor
 FragTrap::FragTrap() : ClapTrap("Default ClapTrap")
 {

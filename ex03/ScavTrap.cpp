@@ -1,5 +1,10 @@
 #include "ScavTrap.hpp"
 
+// ScavTrap::ScavTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack) : ClapTrap(name, hit, energy, attack)
+// {
+// 	std::cout << "ScavTrap: Full parameterized constructor called\n";
+// }
+
 // Default constructor
 ScavTrap::ScavTrap() : ClapTrap("Default ClapTrap")
 {

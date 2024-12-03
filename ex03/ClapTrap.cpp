@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+// ClapTrap::ClapTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack) : _name(name), _hitPoints(hit), _energyPoints(energy), _attackDamage(attack)
+// {
+// 	std::cout << "ClapTrap: Full parameterized constructor called\n";
+// }
+
 // Default constructor
 ClapTrap::ClapTrap() : _name("Default ClapTrap"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {

@@ -8,6 +8,7 @@ class ScavTrap : public virtual ClapTrap
 public:
 	ScavTrap();										//Default constructor
 	ScavTrap(std::string name);						//Parameterized constructor
+	// ScavTrap(const std::string& name, unsigned int hit, unsigned int energy, unsigned int attack);//Parameterized constructor FULL
 	ScavTrap(const ScavTrap& other);				//Copy consturctor
 	ScavTrap& operator=(const ScavTrap& other);		//Copy assignment operator
 	ScavTrap(ScavTrap&& other) noexcept;			//Move constructor
